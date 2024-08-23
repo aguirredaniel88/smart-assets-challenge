@@ -1,0 +1,801 @@
+{
+	"info": {
+		"_postman_id": "ae9a2d48-d589-4d7f-8d9b-a36121f7daf4",
+		"name": "Creatives Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1198679"
+	},
+	"item": [
+		{
+			"name": "campaigns",
+			"item": [
+				{
+					"name": "{campaignId}",
+					"item": [
+						{
+							"name": "creatives",
+							"item": [
+								{
+									"name": "find Creative By Campaign Id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/campaigns/:campaignId/creatives?page=0&size=50",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"campaigns",
+												":campaignId",
+												"creatives"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "50"
+												}
+											],
+											"variable": [
+												{
+													"key": "campaignId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/campaigns/:campaignId/creatives?page=0&size=50",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"campaigns",
+														":campaignId",
+														"creatives"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"key": "size",
+															"value": "50"
+														}
+													],
+													"variable": [
+														{
+															"key": "campaignId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"content\": [\n    {\n      \"creativeId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"creativeUrl\": \"<string>\",\n      \"campaignId\": \"<string>\"\n    },\n    {\n      \"creativeId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"creativeUrl\": \"<string>\",\n      \"campaignId\": \"<string>\"\n    }\n  ],\n  \"number\": \"<integer>\",\n  \"size\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"last\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "save Creative",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"creativeUrl\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/campaigns/:campaignId/creatives",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"campaigns",
+												":campaignId",
+												"creatives"
+											],
+											"variable": [
+												{
+													"key": "campaignId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"creativeUrl\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/campaigns/:campaignId/creatives",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"campaigns",
+														":campaignId",
+														"creatives"
+													],
+													"variable": [
+														{
+															"key": "campaignId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"creativeId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"creativeUrl\": \"<string>\",\n  \"campaignId\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "find Campaign By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/campaigns/:campaignId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"campaigns",
+										":campaignId"
+									],
+									"variable": [
+										{
+											"key": "campaignId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/campaigns/:campaignId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"campaigns",
+												":campaignId"
+											],
+											"variable": [
+												{
+													"key": "campaignId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"campaignId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"brandId\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "brands",
+			"item": [
+				{
+					"name": "{brandId}",
+					"item": [
+						{
+							"name": "campaigns",
+							"item": [
+								{
+									"name": "find Campaigns By Brand Id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId/campaigns?page=0&size=50",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId",
+												"campaigns"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "50"
+												}
+											],
+											"variable": [
+												{
+													"key": "brandId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/brands/:brandId/campaigns?page=0&size=50",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"brands",
+														":brandId",
+														"campaigns"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"key": "size",
+															"value": "50"
+														}
+													],
+													"variable": [
+														{
+															"key": "brandId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"content\": [\n    {\n      \"campaignId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"brandId\": \"<string>\"\n    },\n    {\n      \"campaignId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"brandId\": \"<string>\"\n    }\n  ],\n  \"number\": \"<integer>\",\n  \"size\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"last\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "save Campaign",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId/campaigns",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId",
+												"campaigns"
+											],
+											"variable": [
+												{
+													"key": "brandId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/brands/:brandId/campaigns",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"brands",
+														":brandId",
+														"campaigns"
+													],
+													"variable": [
+														{
+															"key": "brandId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"campaignId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"brandId\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "find Brand By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/brands/:brandId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brands",
+										":brandId"
+									],
+									"variable": [
+										{
+											"key": "brandId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"brandId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All Brands",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/brands?page=0&size=50",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brands"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/brands?page=0&size=50",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brands"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "50"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"content\": [\n    {\n      \"brandId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"brandId\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  ],\n  \"number\": \"<integer>\",\n  \"size\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"last\": \"<boolean>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "save Brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/brands",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brands"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/brands",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brands"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"brandId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "creatives",
+			"item": [
+				{
+					"name": "{creativeId}",
+					"item": [
+						{
+							"name": "find Creative By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/creatives/:creativeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"creatives",
+										":creativeId"
+									],
+									"variable": [
+										{
+											"key": "creativeId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/creatives/:creativeId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"creatives",
+												":creativeId"
+											],
+											"variable": [
+												{
+													"key": "creativeId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"creativeId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"creativeUrl\": \"<string>\",\n  \"campaignId\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}

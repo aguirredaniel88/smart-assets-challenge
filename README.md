@@ -56,3 +56,28 @@ there is a large number of each entity type.
    - Eric Walzthony <eric.walzthony@smartassets.ai>
    - Andrey Nunez <andrey.nunez@smartassets.ai>
    - Nathan Hotchkin <nathan.hotchkin@smartassets.ai>
+
+# Running Instructions
+
+As per the instructions, the application is built using Spring Boot, with an embedded MongoDB. But also it was not clear 
+because it says the application should run easily with docker compose, I have added a docker-compose file to run the application
+with an external MongoDB docker container as well.
+
+## Embedded MongoDB
+
+```bash mvn spring-boot:run``` This will start the application on port 8080, with an embedded MongoDB.
+It requires Java 17 to be installed in the system.
+
+## External MongoDB
+
+```bash sh build-and-run.sh``` This will start the application on port 8080, with an external MongoDB.
+It requires Docker compose to be installed in the system.
+
+The application will be available at http://localhost:8080, and you should check if it is healthy here:
+http://localhost:8080/actuator/health, since it is inserting some sample data on startup it won't be healthy until all the data is inserted.
+
+## Swagger UI
+http://localhost:8080/swagger-ui/index.html
+
+## Postman Collection
+The [postman collection](PostmanCollection.json) is available in the root directory of the project. It can be imported into Postman to test the API.
