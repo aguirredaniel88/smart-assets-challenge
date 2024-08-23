@@ -65,12 +65,12 @@ with an external MongoDB docker container as well.
 
 ## Embedded MongoDB
 
-```bash mvn spring-boot:run``` This will start the application on port 8080, with an embedded MongoDB.
+```mvn spring-boot:run``` This will start the application on port 8080, with an embedded MongoDB.
 It requires Java 17 to be installed in the system.
 
 ## External MongoDB
 
-```bash sh build-and-run.sh``` This will start the application on port 8080, with an external MongoDB.
+```sh build-and-run.sh``` This will start the application on port 8080, with an external MongoDB.
 It requires Docker compose to be installed in the system.
 
 The application will be available at http://localhost:8080, and you should check if it is healthy here:
